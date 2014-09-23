@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>eSKY test app</title>
+    <meta charset="utf-8" />
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="js/app.js"></script>
+    <style>
+        label{
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <form action="#">
+            <fieldset>
+                <legend>Data Source</legend>
+                <!--data source („php”, „json”, „xml’) -->
+                <input id ="datasource_php" type="radio" value="php" name="datasource" checked="checked" />
+                <label for="datasource_php">PHP</label>
+                <input id ="datasource_json" type="radio" value="json" name="datasource" />
+                <label for="datasource_json">JSON</label>
+                <input id ="datasource_xml" type="radio" value="xml" name="datasource" />
+                <label for="datasource_xml">XML</label><br />
+            </fieldset>
+            <fieldset>
+                <legend>Grouping</legend>
+                <!-- group („europe”, „world’, „all”) -->
+                <label for="group_by">Group By</label>
+                <select id ="group_by" name="group_by">
+                    <option value="all">All</option>
+                    <option value="world">World</option>
+                    <option value="europe">Europe</option>
+                </select>
+            </fieldset>
+            <fieldset>
+                <legend>Filters</legend>
+                <!-- - filtering by selected field -->
+               <label for="filter_field">Filter Field</label>
+                <select id ="filter_field" name="filter_field">
+                    <option value="price">Price</option>
+                    <option value="code">Code</option>
+                    <option value="name">Name</option>
+                </select>
+                <label for="filter_type">Filter Type</label>
+                <select id ="filter_type" name="filter_type">
+                    <option value="more">More</option>
+                    <option value="less">Less</option>
+                    <option value="like">Like</option>
+                </select>
+                <label for="filter_value">Filter Value</label>
+                <input id ="filter_value" type="text" name="filter_value" /> 
+            </fieldset>
+            <fieldset>
+                <legend>Sorting</legend>
+               <label for="sort_by">Sort Field</label>
+                <select id ="sort_by" name="sort_by">
+                    <option value="price">Price</option>
+                    <option value="code">Code</option>
+                    <option value="name">Name</option>
+                </select>
+                <label for="sort_order">Sort Order</label>
+                <select id ="sort_order" name="sort_order">
+                    <option value="asc">Asc</option>
+                    <option value="desc">Desc</option>
+                </select>
+            </fieldset>            
+            <input type="button" id="find_btn" value="Find" />
+        </form>    
+    </section>
+    <section><ul id="results"></ul></section>
+
+</body>
+</html>
